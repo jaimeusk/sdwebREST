@@ -12,7 +12,7 @@ public class ConexionBBDD {
 
 	        Class.forName("org.postgresql.Driver"); //Probar a quitarlo para ver si funciona
 
-	        String url = "jdbc:postgresql://localhost:5432/entradas_rest";
+	        String url = "jdbc:postgresql://46.183.119.27:5432/entradas_rest";
 	        String user = "rest";
 	        String pass = "rest20";
 

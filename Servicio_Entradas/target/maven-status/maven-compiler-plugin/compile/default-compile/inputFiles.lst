@@ -1,5 +1,5 @@
-/home/salas/SDSW/Trabajo_REST/sdwebREST/src/main/java/entradas/restservice/EntradaController.java
-/home/salas/SDSW/Trabajo_REST/sdwebREST/src/main/java/entradas/restservice/Entrada.java
-/home/salas/SDSW/Trabajo_REST/sdwebREST/src/main/java/entradas/restservice/RestServiceApplication.java
-/home/salas/SDSW/Trabajo_REST/sdwebREST/src/main/java/entradas/restservice/EntradasDAO.java
-/home/salas/SDSW/Trabajo_REST/sdwebREST/src/main/java/entradas/restservice/ConexionBBDD.java
+/home/salas/SDSW/Trabajo_REST/sdwebREST/Servicio_Entradas/src/main/java/entradas/restservice/EntradasDAO.java
+/home/salas/SDSW/Trabajo_REST/sdwebREST/Servicio_Entradas/src/main/java/entradas/restservice/RestServiceApplication.java
+/home/salas/SDSW/Trabajo_REST/sdwebREST/Servicio_Entradas/src/main/java/entradas/restservice/Entrada.java
+/home/salas/SDSW/Trabajo_REST/sdwebREST/Servicio_Entradas/src/main/java/entradas/restservice/EntradaController.java
+/home/salas/SDSW/Trabajo_REST/sdwebREST/Servicio_Entradas/src/main/java/entradas/restservice/ConexionBBDD.java
