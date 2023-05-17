@@ -1,0 +1,103 @@
+package entradas.restservice;
+
+import java.sql.*;
+import java.util.*;
+
+import java.util.concurrent.atomic.AtomicLong;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+public class EventoController {
+
+    private EventosDAO eventosDAO;
+    private Evento evento;
+    private boolean resultado;
+    private List<Evento> listaEventos;
+
+    @PostMapping("/crearEvento")
+    public boolean crearEvento(@RequestParam(value = "artista") String artista, 
+    							@RequestParam(value = "fecha") String fecha, @RequestParam(value = "lugar") String lugar, 
+    							@RequestParam(value = "ciudad") String ciudad, @RequestParam(value = "entradas") int numEntradas,
+    							@RequestParam(value = "estadio") int tipoEstadio){
+
+        
+			/* QUITADO PORQUE DICE SQL EXCEPTION NEVER THROWN*/        
+        //try{
+        		evento = new Evento(artista,fecha,lugar,ciudad,numEntradas,tipoEstadio);
+            eventosDAO = new EventosDAO();
+            resultado = eventosDAO.agregarEvento(evento);
+        //}
+        //catch(SQLException e){
+            //System.out.println("SQLException: " + e.getMessage());
+            //e.printStackTrace(System.out);
+        //}
+
+        return resultado;    
+
+    }
+    
+    
+    @DeleteMapping("/borrarEvento")
+    public boolean cancelarEntrada(@RequestParam(value = "idEvento") int idEvento){
+
+        //try{
+            eventosDAO = new EventosDAO();
+            resultado = eventosDAO.borrarEvento(idEvento);
+        //}
+        //catch(SQLException e){
+            //System.out.println("SQLException: " + e.getMessage());
+            //e.printStackTrace(System.out);
+        //}
+
+        return resultado;
+
+    }
+
+    
+    @GetMapping("/listarEventos")
+    public List<Evento> listarEventos(@RequestParam(value= "ciudad", defaultValue = "") String ciudad){
+
+		
+        //try{
+            eventosDAO = new EventosDAO();
+            if(ciudad.equals("")){
+            	listaEventos = eventosDAO.obtenerListaEventos();
+            } else {
+            	listaEventos = eventosDAO.obtenerListaEventos(ciudad);
+            }
+            
+
+        //}
+        //catch(SQLException e){
+            //System.out.println("SQLException: " + e.getMessage());
+            //e.printStackTrace(System.out);
+        //}
+
+        return listaEventos;
+    }
+
+		
+		
+    @GetMapping("/obtenerEvento")
+    public Evento obtenerEvento(@RequestParam(value = "idEvento") int idEvento){
+
+			//IMPLEMENTAR QUE SI SE INTRODUCE PARAMETRO CIUDAD, SE BUSQUE POR CIUDAD ¿SOBREESCRIBIR METODO?
+        //try{
+            eventosDAO = new EventosDAO();
+            evento = eventosDAO.obtenerEvento(idEvento);
+           
+            
+
+        //}
+        //catch(SQLException e){
+            //System.out.println("SQLException: " + e.getMessage());
+            //e.printStackTrace(System.out);
+        //}
+
+        return evento;
+    }
+
+}
