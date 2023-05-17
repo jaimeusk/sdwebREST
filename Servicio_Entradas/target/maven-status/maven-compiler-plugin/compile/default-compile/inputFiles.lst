@@ -1,5 +1,8 @@
 /home/dit/sdwebREST/Servicio_Entradas/src/main/java/entradas/restservice/Entrada.java
+/home/dit/sdwebREST/Servicio_Entradas/src/main/java/entradas/restservice/EventosDAO.java
 /home/dit/sdwebREST/Servicio_Entradas/src/main/java/entradas/restservice/EntradasDAO.java
 /home/dit/sdwebREST/Servicio_Entradas/src/main/java/entradas/restservice/ConexionBBDD.java
 /home/dit/sdwebREST/Servicio_Entradas/src/main/java/entradas/restservice/EntradaController.java
+/home/dit/sdwebREST/Servicio_Entradas/src/main/java/entradas/restservice/Evento.java
+/home/dit/sdwebREST/Servicio_Entradas/src/main/java/entradas/restservice/EventoController.java
 /home/dit/sdwebREST/Servicio_Entradas/src/main/java/entradas/restservice/RestServiceApplication.java

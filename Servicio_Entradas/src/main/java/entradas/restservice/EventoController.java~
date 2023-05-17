@@ -87,11 +87,8 @@ public class EventoController {
 			//IMPLEMENTAR QUE SI SE INTRODUCE PARAMETRO CIUDAD, SE BUSQUE POR CIUDAD ¿SOBREESCRIBIR METODO?
         //try{
             eventosDAO = new EventosDAO();
-            if(ciudad.equals("")){
-            	listaEventos = eventosDAO.obtenerListaEventos();
-            } else {
-            	listaEventos = eventosDAO.obtenerListaEventos(ciudad);
-            }
+            evento = eventosDAO.obtenerEvento(idEvento);
+           
             
 
         //}
@@ -100,23 +97,7 @@ public class EventoController {
             //e.printStackTrace(System.out);
         //}
 
-        return listaEventos;
-    }
-	/*
-    @PutMapping("/cambiarasiento")
-    public boolean cambiarAsiento(@RequestParam(value= "idCompra") int idCompra, @RequestParam(value= "numgrada") int numGrada){
-
-        try{
-            entradasDAO = new EntradasDAO();
-            resultado = entradasDAO.cambiarAsiento(idCompra,numGrada);
-        }
-        catch(SQLException e){
-            System.out.println("SQLException: " + e.getMessage());
-            e.printStackTrace(System.out);
+        return evento;
     }
 
-        return resultado;
-
-    }
-    */
 }
