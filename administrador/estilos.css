@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+body{
+    background-image: url('patternpad.svg');
+    
+}
+table{
+    background-color: rgba(252, 252, 252, 0.8);
+    border-radius: 10px;
+
+}
+h1 {
+	--text: #ffffff;
+	--red: #d12229;
+	--orange: #f68a1e;
+	--yellow: #fde01a;
+	--green: #007940;
+	--blue: #24408e;
+	--purple: #732982;
+	--font: "Lobster";
+	color: var(--text);
+	font-size: 7rem;
+	font-family: var(--font);
+	font-weight: 900;
+	font-kerning: normal;
+	text-shadow: 1px 1px 2px #000, 10px 10px 2px var(--red), 15px 15px 2px var(--orange),
+		20px 20px 2px var(--yellow), 25px 25px 2px var(--green),
+		30px 30px 2px var(--blue), 35px 35px 2px var(--purple);
+    background-color: rgba(252, 252, 252, 0.8);
+    border-radius: 10px;
+
+}
+
+/*
+body{
+    background-color: #85FFBD;
+    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 50%, #ffffff 100%);
+}
+/*
+
