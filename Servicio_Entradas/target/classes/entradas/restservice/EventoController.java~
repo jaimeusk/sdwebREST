@@ -24,10 +24,16 @@ public class EventoController {
     							@RequestParam(value = "estadio") int tipoEstadio){
 
         
-		
-        	evento = new Evento(artista,fecha,lugar,ciudad,numEntradas,tipoEstadio);
+			/* QUITADO PORQUE DICE SQL EXCEPTION NEVER THROWN*/        
+        //try{
+        		evento = new Evento(artista,fecha,lugar,ciudad,numEntradas,tipoEstadio);
             eventosDAO = new EventosDAO();
             resultado = eventosDAO.agregarEvento(evento);
+        //}
+        //catch(SQLException e){
+            //System.out.println("SQLException: " + e.getMessage());
+            //e.printStackTrace(System.out);
+        //}
 
         return resultado;    
 
@@ -37,8 +43,14 @@ public class EventoController {
     @DeleteMapping("/borrarEvento")
     public boolean cancelarEntrada(@RequestParam(value = "idEvento") int idEvento){
 
-        eventosDAO = new EventosDAO();
-        resultado = eventosDAO.borrarEvento(idEvento);
+        //try{
+            eventosDAO = new EventosDAO();
+            resultado = eventosDAO.borrarEvento(idEvento);
+        //}
+        //catch(SQLException e){
+            //System.out.println("SQLException: " + e.getMessage());
+            //e.printStackTrace(System.out);
+        //}
 
         return resultado;
 
@@ -48,6 +60,8 @@ public class EventoController {
     @GetMapping("/listarEventos")
     public List<Evento> listarEventos(@RequestParam(value= "ciudad", defaultValue = "") String ciudad){
 
+		
+        //try{
             eventosDAO = new EventosDAO();
             if(ciudad.equals("")){
             	listaEventos = eventosDAO.obtenerListaEventos();
@@ -55,6 +69,12 @@ public class EventoController {
             	listaEventos = eventosDAO.obtenerListaEventos(ciudad);
             }
             
+
+        //}
+        //catch(SQLException e){
+            //System.out.println("SQLException: " + e.getMessage());
+            //e.printStackTrace(System.out);
+        //}
 
         return listaEventos;
     }
@@ -64,8 +84,18 @@ public class EventoController {
     @GetMapping("/obtenerEvento")
     public Evento obtenerEvento(@RequestParam(value = "idEvento") int idEvento){
 
-        eventosDAO = new EventosDAO();
-        evento = eventosDAO.obtenerEvento(idEvento);
+			//IMPLEMENTAR QUE SI SE INTRODUCE PARAMETRO CIUDAD, SE BUSQUE POR CIUDAD ¿SOBREESCRIBIR METODO?
+        //try{
+            eventosDAO = new EventosDAO();
+            evento = eventosDAO.obtenerEvento(idEvento);
+           
+            
+
+        //}
+        //catch(SQLException e){
+            //System.out.println("SQLException: " + e.getMessage());
+            //e.printStackTrace(System.out);
+        //}
 
         return evento;
     }
